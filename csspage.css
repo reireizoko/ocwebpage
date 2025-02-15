@@ -22,3 +22,13 @@ footer{
 h1{
     text-align: center;
 }
+
+h4{
+    text-align: center;
+}
+
+#movingImage {
+    position: absolute;
+    width: 100px; 
+    height: auto;
+}
