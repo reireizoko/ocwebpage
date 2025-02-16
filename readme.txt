@@ -4,6 +4,8 @@
 
 This website is for any people who would want to read about my OC’s lore or see any art I might’ve drawn of them! Other than that, it also helps me keep track of my OCs. 
 
+Some OCs might be my friends, which I had permission to put them on this website!
+
 
 ## Code Samples
 
