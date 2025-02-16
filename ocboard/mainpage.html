@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>OC Website</title>
+    <link rel="stylesheet" href="csspage.css">
+    <style>
+        body {
+            background-color: beige;
+            color: firebrick;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            border: 2px double black;
+            padding: 15px;
+            text-align: center;
+        }
+        thead {
+            background-color: rgb(197,207,238);
+            color: black;
+        }
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+        .hero-image {
+            width: 100px;
+            height: auto;
+        }
+        .hero-heading {
+            flex-grow: 1;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 10px;
+            background-color: lightgray;
+            height: 100vh;
+        }
+        .dropdown {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: firebrick;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        button {
+            background-color: midnightblue;
+            border-style: double;
+            color: whitesmoke;
+            padding: 10px;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <img src="satorudoodle.jpg" alt="SatoruDoodle" class="hero-image">
+        <h1 class="hero-heading">Reizoko's OC Webpage</h1>
+        <img src="satorudoodle2.jpg" alt="SatoruDoodle2" class="hero-image">
+    </header>
+    
+    <!-- Main Layout Container -->
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <select class="dropdown">
+                <option>Navigation</option>
+                <option value="#story">Story</option>
+                <option value="#characters">Characters</option>
+                <option value="#gallery">Gallery</option>
+                <option value="#contact">Contact</option>
+            </select>
+            <ul>
+                <li><a href="#story">Story</a></li>
+                <li><a href="#characters">Characters</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Content Section -->
+        <div class="content">
+            <h1>Welcome to the OC Webpage!</h1>
+            <h4>Navigation Table</h4>
+            <table id="ThreebyTwo">
+                <thead>
+                    <tr>
+                        <th>OCs</th>
+                        <th>Back-Story</th>
+                        <th>Chat Forum</th>
+                        <th>Misc. Forum</th>
+                        <th>OC Images and Bloopers</th>
+                        <th>About Us</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="monsterocs.html">Monster OCs</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="humanocs.html">Human OCs</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <button id="returnback" onclick="openCloseWindow()">Click here to go back!</button>
+            <script>
+                function openCloseWindow() {
+                    window.open('mainpage.html');
+                }
+            </script>
+        </div>
+    </div>
+           <!-- hidden background audio -->
+           <audio id="bg-audio" loop>
+            <source src="currently-under-water.mp3" type="audio/mpeg">
+            <!-- message for unsupported browsers -->
+        </audio>
+        <script>
+            // function to play the audio after user interaction
+            function playAudio() {
+                var audio = document.getElementById("bg-audio");
+                audio.play();
+                document.removeEventListener('click', playAudio);
+                document.removeEventListener('scroll', playAudio);
+            }
+        
+            // attach event listeners for user interaction
+            document.addEventListener('click', playAudio);
+            document.addEventListener('scroll', playAudio);
+        </script>
+        <!-- make sure you click anywhere on the screen, so the audio plays! -->
+</body>
+</html>
