@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="csspage.css">
+    <style>
+        body {
+            background-color: beige;
+            color: firebrick;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 80%;
+            margin: auto;
+        }
+        .gallery-item {
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .modal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s ease;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        button {
+            background-color: midnightblue;
+            border-style: double;
+            color: whitesmoke;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Gallery</h1>
+    <div class="gallery-container">
+        <div class="gallery-item" onclick="openModal('vincentstare.png')"><img src="vincentstare.png" alt="Gallery Image 1"></div>
+        <div class="gallery-item" onclick="openModal('vinniemad.png')"><img src="vinniemad.png" alt="Gallery Image 2"></div>
+        <div class="gallery-item" onclick="openModal('vinnieback.png')"><img src="vinnieback.png" alt="Gallery Image 3"></div>
+        <div class="gallery-item" onclick="openModal('raresighting.png')"><img src="raresighting.png" alt="Gallery Image 4"></div>
+        <div class="gallery-item" onclick="openModal('drippedoutpapareiz.PNG')"><img src="drippedoutpapareiz.PNG" alt="Gallery Image 5"></div>
+        <div class="gallery-item" onclick="openModal('xizpeek.png')"><img src="xizpeek.png" alt="Gallery Image 7"></div>
+        <div class="gallery-item" onclick="openModal('crazedxiz.png')"><img src="crazedxiz.png" alt="Gallery Image 8"></div>
+        <div class="gallery-item" onclick="openModal('happyxiz.png')"><img src="happyxiz.png" alt="Gallery Image 9"></div>
+        <div class="gallery-item" onclick="openModal('blakesilly.PNG')"><img src="blakesilly.PNG" alt="Gallery Image 10"></div>
+        <div class="gallery-item" onclick="openModal('xizdoodle.png')"><img src="xizdoodle.png" alt="Gallery Image 11"></div>
+        <div class="gallery-item" onclick="openModal('tomfoolery.png')"><img src="tomfoolery.png" alt="Gallery Image 12"></div>
+        <div class="gallery-item" onclick="openModal('turtleandtyler.png')"><img src="turtleandtyler.png" alt="Gallery Image 13"></div>
+        <div class="gallery-item" onclick="openModal('kukiandkamex.png')"><img src="kukiandkamex.png" alt="Gallery Image 14"></div>
+        <div class="gallery-item" onclick="openModal('reireiandtyler.png')"><img src="reireiandtyler.png" alt="Gallery Image 15"></div>
+    </div>
+    
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-img" src="" alt="Large View">
+    </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById('modal-img').src = src;
+            document.getElementById('modal').style.visibility = 'visible';
+            document.getElementById('modal').style.opacity = 1;
+        }
+        function closeModal() {
+            document.getElementById('modal').style.visibility = 'hidden';
+            document.getElementById('modal').style.opacity = 0;
+        }
+    </script>
+                <button id="returnback" onclick="openCloseWindow()">Click here to go back!</button>
+                <script>
+                    function openCloseWindow() {
+                        window.open('mainpage.html');
+                    }
+                </script>
+</body>
+</html>
